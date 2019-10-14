@@ -1,7 +1,7 @@
 :root {
   --background-color: #f5f4f4;
   /* --primary-color: #3e64ff; */
-  --primary-color: #42b883;
+  --primary-color: #1fab89;
   --secondary-color: #230338;
   --padding-section: 6rem;
   --padding-large: 30rem;
@@ -15,6 +15,7 @@
   --h3: 3rem;
   --grid-gap: 2rem;
 }
+
 ::-moz-selection {
   /* Code for Firefox */
   color: var(--primary-color);
@@ -25,6 +26,7 @@
   color: var(--primary-color);
   background: var(--secondary-color);
 }
+
 *,
 *::before,
 *::after {
@@ -237,26 +239,44 @@ body {
 .section--3 .card__content h3 {
   font-size: var(--h3);
 }
+
 .footer {
-  display: grid;
+  /* display: grid; */
+  display: flex;
   /* border: 2px solid #42b883; */
   padding: 4rem 0;
   margin-bottom: 5rem;
   color: var(--secondary-color);
-  grid-template-columns: 2fr repeat(5, 1fr);
+  /* grid-gap: var(--grid-gap); */
+  /* grid-template-columns: 1.5fr repeat(5, 1fr); */
+  justify-content: space-between;
+  /* border: 2px solid blue; */
 }
+
+.footer__company-box {
+  align-items: flex-end;
+}
+
+.footer div {
+  /* border: 2px solid red; */
+}
+
 .footer__heading {
   font-size: 4rem;
 }
+
 .footer__nav {
   font-size: 2rem;
 }
+
 .footer__nav h3 {
   text-transform: uppercase;
 }
+
 .footer ul {
   list-style: none;
 }
+
 .footer__nav--link:active,
 .footer__nav--link:link,
 .footer__nav--link:visited {
@@ -269,10 +289,12 @@ body {
   margin-top: 2rem;
   border-bottom: 3px solid transparent;
 }
+
 .footer__nav--link:hover {
   opacity: 1;
-  border-bottom: 2.5px solid var(--secondary-color);
+  border-bottom: 2.5px solid var(--primary-color);
 }
+
 /* Components */
 .heading,
 .heading--2 {
@@ -307,14 +329,17 @@ body {
 .button--primary:visited {
   background: var(--primary-color);
 }
+
 .button--primary:hover {
   /* opacity: 0.8; */
   background: var(--secondary-color);
 }
+
 .button--primary:active {
   /* opacity: 0.8; */
   box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.1);
 }
+
 .subheading {
   font-size: 2.5rem;
   opacity: 0.75;
