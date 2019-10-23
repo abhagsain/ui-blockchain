@@ -10,7 +10,7 @@
     --padding-xs: 5rem;
     --margin-xxs: 3rem;
     --margin-xs: 8rem;
-    --h1: 7rem;
+    --h1: 6rem;
     --h2: 5rem;
     --h3: 3rem;
     --grid-gap: 2rem;
@@ -92,18 +92,59 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+.navbar {
+    background: var(--secondary-color);
+    position: absolute;
+    height: 10vh;
+    color: var(--primary-color);
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    &__brand:link,
+    &__brand:visited {
+        color: white;
+        text-decoration: none;
+        display: block;
+        font-size: 3rem;
+        // padding-left: 5rem;
+        align-self: flex-start;
+        display: block;
+
+        @include respond(tabPort) {
+            // padding-left: 5rem;
+            font-size: 4rem;
+        }
+    }
+
+    &--center {
+        @include respond(tabPort) {
+            text-align: center;
+        }
+    }
+
+    &__container {
+        max-width: 90%;
+        margin: 0 auto;
+        width: 100%;
+        padding: 0 5rem;
+    }
+}
+
 .container {
     max-width: 90%;
     margin: 0 auto;
-
-    @include respond(tabPort) {
-        max-width: 90%;
-    }
 }
 
 .hero-section {
     padding: 15rem 5rem;
-    height: 100vh;
+    height: 90vh;
+    margin-top: 10rem;
+
 
     @include respond(tabPort) {
         height: 75vh;
@@ -125,9 +166,11 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
+    text-align: start;
 
-    @include respond(phone) {
-        // text-align: center;
+
+    @include respond(tabPort) {
+        text-align: center;
     }
 }
 
@@ -203,7 +246,12 @@ body {
 
 .card__left {
     flex: 1;
+
     /* padding-right: 15rem; */
+    &::before {
+        content: "\21be";
+        color: var(--primary-color);
+    }
 }
 
 .content--desc {
@@ -250,8 +298,7 @@ body {
 
     @include respond(tabPort) {
         grid-gap: 6rem;
-
-        grid-template-columns: repeat(2, 250px);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     @include respond(phone) {
@@ -262,7 +309,8 @@ body {
 
 .stat__box {
     background: white;
-    padding: 5rem 8rem;
+    // padding: 5rem 8rem;
+    padding: 4rem 5rem;
     border-radius: 5px;
     transition: all 0.3s;
     border-top: 10px solid var(--primary-color);
@@ -298,8 +346,9 @@ body {
     grid-gap: var(--grid-gap);
     grid-template-columns: 50% 50%;
     display: grid;
+    align-items: center;
 
-    @include respond(phone) {
+    @include respond(tabPort) {
         grid-template-columns: repeat(1, 1fr);
         padding: 0 2rem;
     }
@@ -307,6 +356,9 @@ body {
 
 .img-container {
     // border: 2px solid purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 
 }
@@ -319,7 +371,7 @@ body {
 .section-2--img {
     /* border: 2px solid blue; */
     // border: 2px solid red;
-    width: 50rem;
+    width: 45rem;
 
     object-fit: contain;
 
@@ -328,7 +380,13 @@ body {
 
     }
 
+    @include respond(tabPort) {
+        max-width: 50rem;
+
+    }
+
     @include respond(phone) {
+        max-width: 70rem;
         width: 100%;
     }
 }
