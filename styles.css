@@ -189,7 +189,7 @@ body {
 .hero__subheading {
   font-size: 2.5rem;
   color: var(--secondary-color);
-  margin: 3rem 0;
+  margin: 2rem 0;
 }
 
 @media screen and (min-width: 1800px) {
@@ -711,6 +711,21 @@ body {
 
 .utility__margin--y-1 {
   margin: 1.5rem 0;
+}
+
+.credits {
+  padding: 2rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.credits .footer__nav--link {
+  border-bottom: 2.5px solid var(--primary-color);
+  opacity: .75;
+}
+
+.credits .footer__nav--link:hover {
+  opacity: 1;
 }
 
 /* Animations */
